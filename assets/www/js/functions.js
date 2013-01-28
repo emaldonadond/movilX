@@ -47,7 +47,7 @@ function urlParam(name)
 /**
  * Initialize the application
  */
-function initApplication()
+function initApplicationOriginal()
 {
    $('#set-car-position, #find-car').click(function() {
       if (checkRequirements() === false)
@@ -236,4 +236,61 @@ function createPositionsHistoryList(idElement, positions)
       $('#' + idElement).append($listElement);
    }
    $('#' + idElement).listview('refresh');
+}
+
+
+/*
+*  Fecha Creacion: Enero 28, 2013
+*  Creado por: Edwin Maldonado ERMP
+*  Descripcion: Control de login.
+*/
+
+function checkPreAuth() {
+    var form = $("#loginForm");
+    navigator.notification.alert("nigga check Path!", function() {});
+    if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
+        $("#username", form).val(window.localStorage["username"]);
+        $("#password", form).val(window.localStorage["password"]);
+        handleLogin();
+    }
+}
+
+function handleLogin() {
+    var form = $("#loginForm");    
+    //disable the button so we can't resubmit while we wait
+    $("#submitButton",form).attr("disabled","disabled");
+    var u = $("#username", form).val();
+    var p = $("#password", form).val();
+    console.log("click");
+    if(u != '' && p!= '') {
+        $.post("http://172.16.22.91/movilx_prueba/usercheck.php?method=login&returnformat=json", {username:u,password:p}, function(res) {
+            if(res == true) {
+                //store
+                window.localStorage["username"] = u;
+                window.localStorage["password"] = p;             
+                $.mobile.changePage("aurelio.html");
+            } else {
+                navigator.notification.alert("Your login failed", function() {});
+            }
+         $("#submitButton").removeAttr("disabled");
+        },"json");
+    } else {
+        //Thanks Igor!
+        navigator.notification.alert("You must enter a username and password", function() {});
+        $("#submitButton").removeAttr("disabled");
+    }
+    return false;
+}
+
+
+/**
+*  Fecha Creacion: Enero 28, 2013
+*  Creado por: Edwin Maldonado ERMP
+*  Descripcion: Initialize the application
+*/
+
+function initApplication()
+{
+   //navigator.notification.alert("nigga!", function() {});
+   $("#loginForm").on("submit",handleLogin);
 }
