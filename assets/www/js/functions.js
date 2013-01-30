@@ -295,3 +295,10 @@ function initApplication()
    //navigator.notification.alert("nigga!", function() {});
    $("#loginForm").on("submit",handleLogin);
 }
+
+function initSignUp()
+{
+   //navigator.notification.alert("nigga!", function() {});
+   $("#signUpForm").validate();
+   
+}
