@@ -337,6 +337,43 @@ function handleRegistration(){
   var form = $("#signUpForm");  
   //disable the button so we can't resubmit while we wait
   $("#submitButton",form).attr("disabled","disabled");
+
+
+  // RegistrationPart:
+
+  //disable the button so we can't resubmit while we wait
+  $("#submitButton",form).attr("disabled","disabled");
+  var u = $("#username", form).val();
+  var p = $("#password", form).val();
+  console.log("click");
+    if(u != '' && p!= '') {
+        $.post("http://172.16.22.91/movilx_prueba/userRegistration.php", {username:u,password:p}, function(res) {
+            if(res == true) {
+                //store
+                navigator.notification.alert("OMG It's in", function() {});
+                window.localStorage["username"] = u;
+                window.localStorage["password"] = p;             
+                $.mobile.changePage("aurelio.html");
+            } else {
+                if(res == '0'){
+                  //Si es 0 es porque el user esta repetido
+                  navigator.notification.alert("Error al registrarse: Usuario ya existe. ", function() {});
+                }else{
+                  navigator.notification.alert("Error al registrarse: ", function() {});  
+                }
+                
+            }
+         $("#submitButton").removeAttr("disabled");
+        },"json");
+    } else {
+        //Thanks Igor!
+        navigator.notification.alert("You must enter a username and password", function() {});
+        $("#submitButton").removeAttr("disabled");
+    }
+    return false;
+  // --------- END -----------
+
+  //AutoLogin then.
   handleLoginRegister();
 }
 
