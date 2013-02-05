@@ -291,6 +291,8 @@ function handleLoginRegister() {
     $("#submitButton",form).attr("disabled","disabled");
     var u = $("#username", form).val();
     var p = $("#password", form).val();
+
+    
     console.log("click");
     if(u != '' && p!= '') {
         $.post("http://172.16.22.91/movilx_prueba/usercheck.php?method=login&returnformat=json", {username:u,password:p}, function(res) {
@@ -345,9 +347,11 @@ function handleRegistration(){
   $("#submitButton",form).attr("disabled","disabled");
   var u = $("#username", form).val();
   var p = $("#password", form).val();
+  var e = $("#email", form).val();
+    
   console.log("click");
     if(u != '' && p!= '') {
-        $.post("http://172.16.22.91/movilx_prueba/userRegistration.php", {username:u,password:p}, function(res) {
+        $.post("http://172.16.22.91/movilx_prueba/userRegistration.php", {username:u,password:p, email:e}, function(res) {
             if(res == true) {
                 //store
                 navigator.notification.alert("OMG It's in", function() {});
