@@ -269,7 +269,7 @@ function handleLogin() {
                 navigator.notification.alert("OMG It's in", function() {});
                 window.localStorage["username"] = u;
                 window.localStorage["password"] = p;             
-                $.mobile.changePage("aurelio.html");
+                $.mobile.changePage("editionlist.html");
             } else {
                 navigator.notification.alert("Your login failed", function() {});
             }
@@ -354,10 +354,10 @@ function handleRegistration(){
         $.post("http://172.16.22.91/movilx_prueba/userRegistration.php", {username:u,password:p, email:e}, function(res) {
             if(res == true) {
                 //store
-                navigator.notification.alert("OMG It's in", function() {});
+                navigator.notification.alert("Usuario creado! Bienvenido", function() {});
                 window.localStorage["username"] = u;
                 window.localStorage["password"] = p;             
-                $.mobile.changePage("aurelio.html");
+                $.mobile.changePage("dashboard.html");
             } else {
                 if(res == '0'){
                   //Si es 0 es porque el user esta repetido
