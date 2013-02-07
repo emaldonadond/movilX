@@ -266,7 +266,7 @@ function handleLogin() {
         $.post("http://172.16.22.91/movilx_prueba/usercheck.php?method=login&returnformat=json", {username:u,password:p}, function(res) {
             if(res == true) {
                 //store
-                navigator.notification.alert("OMG It's in", function() {});
+                navigator.notification.alert("Bienvenido a NuestroDiario Digital.", function() {});
                 window.localStorage["username"] = u;
                 window.localStorage["password"] = p;             
                 $.mobile.changePage("editionlist.html");
