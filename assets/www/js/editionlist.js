@@ -11,11 +11,10 @@ function getEditionList() {
     $('#editionList li').remove();
     editions = data.items;
     $.each(editions, function(index, edition) {
-      $('#editionList').append('<li><a href="editiondetails.html?id=' + edition.id + '">' +
-          '<img src="pics/' + edition.picture + '"/>' +
-          '<h4>' + edition.firstName + ' ' + edition.lastName + '</h4>' +
-          '<p>' + edition.title + '</p>' +
-          '<span class="ui-li-count">' + edition.reportCount + '</span></a></li>');
+      $('#editionList').append('<li><a href="editiondetails.html?id=' + edition.edition_id + '">' +
+          '<h4>' + edition.edition_number + ' ' + edition.edition_year + '</h4>' +
+          '<p>' + edition.edition_publication_date + '</p>' +
+          '<span class="ui-li-count">' + edition.edition_number + '</span></a></li>');
     });
     $('#editionList').listview('refresh');
   });
