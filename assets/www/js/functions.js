@@ -271,7 +271,7 @@ function handleLogin() {
                 window.localStorage["password"] = p;             
                 $.mobile.changePage("editionlist.html");
             } else {
-                navigator.notification.alert("Your login failed", function() {});
+                navigator.notification.alert("Usuario o Password Invalido", function() {});
             }
          $("#submitButton").removeAttr("disabled");
         },"json");
