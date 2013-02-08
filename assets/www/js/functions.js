@@ -269,7 +269,7 @@ function handleLogin() {
                 navigator.notification.alert("Bienvenido a NuestroDiario Digital.", function() {});
                 window.localStorage["username"] = u;
                 window.localStorage["password"] = p;             
-                $.mobile.changePage("editionlist.html");
+                $.mobile.changePage("list-of-cards.html");
             } else {
                 navigator.notification.alert("Usuario o Password Invalido", function() {});
             }

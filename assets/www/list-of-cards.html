@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+/**
+ * Appcropolis Template: list-of-cards 
+ * @copy Appcropolis LLC (c) 2012. All rights reserved.
+ * @author Developer's Name (support@appcropolis.com)
+ * @date 2012-09-30
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+ * SOFTWARE.
+ *
+ * License and legal information: 
+ *
+ * http://appcropolis.com/license/
+ * http://appcropolis.com/legal/
+ * http://appcropolis.com/privacy/
+ */ -->
+<html>
+    
+    <head>
+        <title>list-of-cards</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" type="text/css" media="all" />
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/jquery.mobile-1.2.0.min.js"></script>
+        <link rel="stylesheet" href="css/list-of-cards.css" />
+
+    </head>
+    <body>
+	    <!-- list-of-cards -->
+        <div id="list-of-cards" data-role="page"><!-- page -->
+            <div data-role="header" data-position="fixed" data-theme="c"><!-- header -->
+               <form action="" method="get" name="search" class="search-form">
+				  <input class="search_box" id="query" name="query" placeholder="Search..." data-mini="true" type="search">
+				</form>
+            </div>
+            <div data-role="content" data-theme=""> <!-- content -->
+               <link rel="stylesheet" href="css/list-of-cards.css" />
+				<!-- <p style="text-align: center"><small>Sit sit mus porta tempor magna elit</small><p> -->
+				
+				<!-- list of cards -->
+                <ul data-role="list-of-cards" data-divider-theme="b" data-role="listview" data-filter="true">
+                	<!-- card #1 -->
+                    <li data-theme="c">
+                    	<ul data-role="listview" data-inset="true" class="loc-card">
+                    		<li class="loc-image">
+	                			<div>
+	                				<img src="resources/images/cheese.png"/>
+	                			</div>
+                    		</li>
+                    		<li class="loc-credits">
+	            				<img src="resources/images/profile-01.png"/>
+	                            <h3>Porta tristique et in et</h3>
+	                            <p>by <a href="#">sandra</a>.</p>
+                       		</li>
+                    		<li class="loc-comments">
+	            				<p>2 comments, 4 likes</p>
+                       		</li>
+                    	</ul>
+                    </li>
+                    
+                    
+                    <!-- card #2 -->
+                    <li data-theme="c">
+                    	<ul data-role="listview"  data-inset="true" class="loc-card">
+                    		<li class="loc-image">
+	                			<div>
+	                				<img src="resources/images/peppers.png"/>
+	                			</div>
+                    		</li>
+                    		<li class="loc-credits">
+	            				<img src="resources/images/profile-02.png"/>
+	                            <h3>Rhoncus elementum porta </h3>
+	                            <p>by <a href="#">stella</a>.</p>
+                       		</li>
+                    		<li class="loc-comments">
+	            				<p>12 comments, 8 likes</p>
+                       		</li>
+                    	</ul>
+                    </li>
+                    
+                    
+                    <!-- card #3 -->
+                    <li data-theme="c">
+                    	<ul data-role="listview"  data-inset="true" class="loc-card">
+                    		<li class="loc-image">
+	                			<div>
+	                				<img src="resources/images/tomatos.png"/>
+	                			</div>
+                    		</li>
+                    		<li class="loc-credits">
+	            				<img src="resources/images/profile-03.png"/>
+	                            <h3>Nunc nunc velit arcu</h3>
+	                            <p>by <a href="#">albert</a>.</p>
+                       		</li>
+                    		<li class="loc-comments">
+	            				<p>0 comment, 0 likes</p>
+                       		</li>
+                    	</ul>
+                    </li>
+                    
+                    
+                    <!-- card #4 -->
+                    <li data-theme="c">
+                    	<ul data-role="listview"  data-inset="true" class="loc-card">
+                    		<li class="loc-image">
+	                			<div>
+	                				<img src="resources/images/glasses.png"/>
+	                			</div>
+                    		</li>
+                    		<li class="loc-credits">
+	            				<img src="resources/images/profile-04.png"/>
+	                            <h3>Porta tristique, et in et</h3>
+	                            <p>by <a href="#">leonard</a>.</p>
+                       		</li>
+                    		<li class="loc-comments">
+	            				<p>1 comments, 6 likes</p>
+                       		</li>
+                    	</ul>
+                    </li>
+                </ul>
+				
+                
+				
+            </div><!-- /content -->
+         </div> <!-- /page -->
+    </body>
+
+</html>
