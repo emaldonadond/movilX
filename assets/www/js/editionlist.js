@@ -13,7 +13,7 @@ function getEditionList() {
     $.each(editions, function(index, edition) {
       $('#editionList').append(
           '<li class="loc-image"> <div>' + 
-          '<img src="http://nuestrodiario.com/nuestrodiario/pages/edicion/2013/02/07/edicion_nacional/1-thumb.jpg"/>' + 
+          '<img src="http://nuestrodiario.com/nuestrodiario/pages/edicion/2013/02/07/edicion_nacional/1.jpg"/>' + 
           '</div></li>' +
 
           '<li class="loc-credits">' + 
