@@ -3,8 +3,33 @@ var serviceURL = "http://172.16.22.91/movilx_prueba/layerx/";
 var editions;
 
 $('#editionListPage').bind('pageinit', function(event) {
-  getEditionList();
+  loadEdition();
 });
+
+/*
+* Descripcion: Esta funcion, nos devuelve las variables enviadas por GET a esta pagina.
+*
+*/
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+
+function loadEdition(){
+  var dateFromGetDate = getUrlVars()["date"];
+  var dateFromGetSuplemento = getUrlVars()["suplemento"];
+
+  $('#editionList').append('Details Edition, '+
+    'Date: '+dateFromGetDate+
+    'Suplemento: '+dateFromGetSuplemento
+    );
+  $('#editionList').listview('refresh');
+ 
+}
 
 function getEditionList() {
   $.getJSON(serviceURL + 'geteditions.php', function(data) {
@@ -23,9 +48,10 @@ function getEditionList() {
           '</li>' +
 
           '<li class="loc-comments">' + 
-          '<a href="loadedition.html?date=2013-02-13&suplemento=1688"><p>2 comments, 4 likes</p></a>' +
+          '<p>2 comments, 4 likes</p>' +
           '</li>');
     });
     $('#editionList').listview('refresh');
   });
 }
+
