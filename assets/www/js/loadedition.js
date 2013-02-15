@@ -20,15 +20,35 @@ function getUrlVars() {
 
 
 function loadEdition(){
+
   var dateFromGetDate = getUrlVars()["date"];
   var dateFromGetSuplemento = getUrlVars()["suplemento"];
+  $('#editionList li').remove();
 
-  $('#editionList').append('Details Edition, '+
-    'Date: '+dateFromGetDate+
-    'Suplemento: '+dateFromGetSuplemento
-    );
-  $('#editionList').listview('refresh');
- 
+  if(dateFromGetDate != '' && dateFromGetSuplemento != '') {
+
+        $.post("http://nuestrodiario.com/nuestrodiario/bin/getMobilexSupplement.php?method=login&returnformat=json", {issueDate:dateFromGetDate,issueIdSuplemento:dateFromGetSuplemento}, function(res) {
+                 
+          console.log("click baby");
+          //navigator.notification.alert("Edicion cargada!", function() {});
+          editions = res.items;
+          $.each(editions, function(index, edition) {
+            $('#editionList').append(
+            '<h3>' + edition.pathPage + '</h3>'
+            );
+          });
+          
+          $('#editionList').listview('refresh');
+                
+          //$.mobile.changePage("editionlist-cards.html");
+            
+         
+        },"json");
+  }
+  
+
+
+
 }
 
 function getEditionList() {
