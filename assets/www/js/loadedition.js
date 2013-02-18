@@ -23,7 +23,7 @@ function loadEdition(){
 
   var dateFromGetDate = getUrlVars()["date"];
   var dateFromGetSuplemento = getUrlVars()["suplemento"];
-  $('#editionList li').remove();
+  $('#pageScroller').html('');
 
   if(dateFromGetDate != '' && dateFromGetSuplemento != '') {
 
@@ -32,13 +32,21 @@ function loadEdition(){
           console.log("click baby");
           //navigator.notification.alert("Edicion cargada!", function() {});
           editions = res.items;
+
           $.each(editions, function(index, edition) {
-            $('#editionList').append(
-            '<h3>' + edition.pathPage + '</h3>'
+            $('#pageScroller').append(
+
+            '<div class="page" > <hr/>' + 
+                '<img src="http://nuestrodiario.com/nuestrodiario/pages/'+ edition.pathPage +'.jpg" width="100%"/>' + 
+            '</div>'
+
+
             );
           });
           
-          $('#editionList').listview('refresh');
+
+
+          $('#pageScroller').listview('refresh');
                 
           //$.mobile.changePage("editionlist-cards.html");
             
