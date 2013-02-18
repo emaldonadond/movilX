@@ -13,7 +13,7 @@ function getEditionList() {
     $.each(editions, function(index, edition) {
       $('#editionList').append(
           '<li class="loc-image"> <div>' + 
-          '<img src="http://nuestrodiario.com/nuestrodiario/pages/edicion/2013/02/07/edicion_nacional/1.jpg"/>' + 
+          '<img src="http://nuestrodiario.com/nuestrodiario/pages/edicion/' + edition.fixed_slash_date + '/edicion_nacional/1.jpg"/>' + 
           '</div></li>' +
 
           '<li class="loc-credits">' + 
@@ -23,7 +23,7 @@ function getEditionList() {
           '</li>' +
 
           '<li class="loc-comments">' + 
-          '<a href="loadedition.html?date=2013-02-13&suplemento=1688"><p>2 comments, 4 likes</p></a>' +
+          '<a href="loadeditionCarrousel.html?date=' + edition.fixed_dash_date + '&suplemento=1688"><p>2 comments, 4 likes</p></a>' +
           '</li>');
     });
     $('#editionList').listview('refresh');
