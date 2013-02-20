@@ -2,7 +2,7 @@ var serviceURL = "http://172.16.22.91/movilx_prueba/layerx/";
 
 var editions;
 
-$('#editionListPage').bind('pageinit', function(event) {
+$('#editionListSwipePage').bind('pageinit', function(event) {
   loadEdition();
 });
 
@@ -21,18 +21,18 @@ function getUrlVars() {
 
 function loadEdition(){
 
-  var dateFromGetDate = getUrlVars()["date"];
-  var dateFromGetSuplemento = getUrlVars()["suplemento"];
-  $('#pageScroller').html('');
+  var dateFromGetDate = "2013-02-20"; //getUrlVars()["date"];
+  var dateFromGetSuplemento = "1746"; //getUrlVars()["suplemento"];
+  //$('#pageScroller').html('');
 
   if(dateFromGetDate != '' && dateFromGetSuplemento != '') {
-
+        console.log("Debug Edwin 001, date:  "+dateFromGetDate+", suplem: "+dateFromGetSuplemento);
         $.post("http://nuestrodiario.com/nuestrodiario/bin/getMobilexSupplement.php?method=login&returnformat=json", {issueDate:dateFromGetDate,issueIdSuplemento:dateFromGetSuplemento}, function(res) {
                  
           console.log("click baby");
-          //navigator.notification.alert("Edicion cargada!", function() {});
+          navigator.notification.alert("Edicion cargada!", function() {});
           editions = res.items;
-
+          console.log("debug Eddy: "+editions);
           $.each(editions, function(index, edition) {
             $('#pageScroller').append(
 
