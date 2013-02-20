@@ -21,12 +21,19 @@ function getUrlVars() {
 
 function loadEdition(){
 
-  var dateFromGetDate = "2013-02-20"; //getUrlVars()["date"];
-  var dateFromGetSuplemento = "1746"; //getUrlVars()["suplemento"];
+  //var dateFromGetDate = getUrlVars()["date"];
+  //var dateFromGetSuplemento = getUrlVars()["suplemento"];
+  var dateFromGetDate = dateNoScope;
+  var dateFromGetSuplemento = supNoScope;
+  //-----------
+  //var url = $.url(document.location);
+  //var dateFromGetDate = url.param("date");
+  //var dateFromGetSuplemento = url.param("suplemento");
+
   //$('#pageScroller').html('');
 
   if(dateFromGetDate != '' && dateFromGetSuplemento != '') {
-        console.log("Debug Edwin 001, date:  "+dateFromGetDate+", suplem: "+dateFromGetSuplemento);
+        console.log("Debug Params 001, date:  "+dateFromGetDate+", suplem: "+dateFromGetSuplemento);
         $.post("http://nuestrodiario.com/nuestrodiario/bin/getMobilexSupplement.php?method=login&returnformat=json", {issueDate:dateFromGetDate,issueIdSuplemento:dateFromGetSuplemento}, function(res) {
                  
           console.log("click baby");
