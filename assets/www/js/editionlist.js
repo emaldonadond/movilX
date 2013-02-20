@@ -4,6 +4,12 @@ var editions;
 
 $('#editionListPage').bind('pageinit', function(event) {
   getEditionList();
+  $("#gotoGalleryBtn").click(function(){
+        //var argValue = $("#argTxt").val();
+        //$.mobile.changePage("page2.html",{data:{arg1:argValue}});
+        //or you could pass parameters in the URL
+        $.mobile.changePage("loadeditionCarrousel.html?date=2013-02-19&suplemento=1737");
+      });
 });
 
 function getEditionList() {
@@ -23,9 +29,18 @@ function getEditionList() {
           '</li>' +
 
           '<li class="loc-comments">' + 
-          '<a href="loadeditionCarrousel.html?date=' + edition.fixed_dash_date + '&suplemento=1688"><p>2 comments, 4 likes</p></a>' +
+          '<a href="#" data-role="button" id="gotoGalleryBtn">AQUI</a><p>2 comments, 4 likes</p>' +
           '</li>');
     });
     $('#editionList').listview('refresh');
+
+          $("#gotoGalleryBtn").click(function(){
+        //var argValue = $("#argTxt").val();
+        //$.mobile.changePage("page2.html",{data:{arg1:argValue}});
+        //or you could pass parameters in the URL
+        //alert("Give me your money foo!");
+        $.mobile.changePage("loadeditionCarrousel.html?date=2013-02-19&suplemento=1737");
+      });
+
   });
 }
