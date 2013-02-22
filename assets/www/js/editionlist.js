@@ -1,4 +1,5 @@
-var serviceURL = "http://172.16.22.91/movilx_prueba/layerx/";
+//var serviceURL = "http://172.16.22.91/movilx_prueba/layerx/";
+var serviceURL = "http://www.nuestrodiario.com/MovilX/mobileOps/layerx/";
 
 var editions;
 var dateNoScope; 
