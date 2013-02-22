@@ -1,3 +1,5 @@
+var movilxUserId = 0; 
+
 function checkRequirements()
 {
    if (navigator.connection.type == Connection.NONE)
@@ -264,8 +266,10 @@ function handleLogin() {
     console.log("click");
     if(u != '' && p!= '') {
         $.post("http://www.nuestrodiario.com/MovilX/mobileOps/usercheck.php?method=login&returnformat=json", {username:u,password:p}, function(res) {
-            if(res == true) {
+            
+            if(res != 0) {
                 //store
+                movilxUserId = res;
                 navigator.notification.alert("Bienvenido a NuestroDiario Digital.", function() {});
                 window.localStorage["username"] = u;
                 window.localStorage["password"] = p;             

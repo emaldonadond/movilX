@@ -34,7 +34,7 @@ function loadEdition(){
 
   if(dateFromGetDate != '' && dateFromGetSuplemento != '') {
         console.log("Debug Params 001, date:  "+dateFromGetDate+", suplem: "+dateFromGetSuplemento);
-        $.post("http://nuestrodiario.com/nuestrodiario/bin/getMobilexSupplement.php?method=login&returnformat=json", {issueDate:dateFromGetDate,issueIdSuplemento:dateFromGetSuplemento}, function(res) {
+        $.post("http://nuestrodiario.com/nuestrodiario/bin/getMobilexSupplement.php?method=login&returnformat=json", {issueDate:dateFromGetDate,issueIdSuplemento:dateFromGetSuplemento,uID:movilxUserId}, function(res) {
                  
           console.log("click baby");
           navigator.notification.alert("Edicion cargada!", function() {});
@@ -53,7 +53,7 @@ function loadEdition(){
           
 
 
-          $('#pageScroller').listview('refresh');
+          //$('#pageScroller').listview('refresh');
                 
           //$.mobile.changePage("editionlist-cards.html");
             
