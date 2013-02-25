@@ -330,6 +330,7 @@ function initApplication()
 {
    //navigator.notification.alert("nigga!", function() {});
    $("#loginForm").on("submit",handleLogin);
+
 }
 
 
