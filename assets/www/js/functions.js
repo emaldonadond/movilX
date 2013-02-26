@@ -1,5 +1,12 @@
 var movilxUserId = 0; 
 
+
+function changeToEditionViewPage(){
+  console.log("Debug Params BolsaEdiciones, user:  "+movilxUserId);
+  $.mobile.changePage("listOfEditionView.html",{data:{userId:movilxUserId}});
+}
+
+
 function checkRequirements()
 {
    if (navigator.connection.type == Connection.NONE)
