@@ -37,7 +37,7 @@
     <body>
 	    <!-- list-of-cards -->
         <div id="list-of-cards" data-role="page"><!-- page -->
-            <link rel="stylesheet" href="css/list-of-cards.css" />
+            
             <script src="js/loadeditionviews.js"></script>
 
             <div data-role="header" data-position="fixed" data-theme="c"><!-- header -->
@@ -47,10 +47,11 @@
             </div>
             <div data-role="content" data-theme=""> <!-- content -->
                <link rel="stylesheet" href="css/list-of-cards.css" />
+
 				<!-- <p style="text-align: center"><small>Sit sit mus porta tempor magna elit</small><p> -->
 				
 				<!-- list of cards -->
-                <ul id= "editionviewlist" data-role="list-of-cards" data-divider-theme="b" data-role="listview" data-filter="true">
+                <ul id= "editionviewlist" data-role="list-of-cards"  data-role="listview" data-filter="true">
 
                 </ul>
 				
@@ -62,7 +63,7 @@
 
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#" data-icon="home">Inicio</a></li>
+                    <li><a href="#" data-icon="home" onclick="changeToHomePage();">Inicio</a></li>
                     <li>
                     <a href="#" data-icon="star" class="ui-btn-active ui-state-persist" onclick="changeToEditionViewPage();">Mis Ediciones
                     </a>

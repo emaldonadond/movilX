@@ -3,8 +3,19 @@ var movilxUserId = 0;
 
 function changeToEditionViewPage(){
   console.log("Debug Params BolsaEdiciones, user:  "+movilxUserId);
-  $.mobile.changePage("listOfEditionView.html",{data:{userId:movilxUserId}});
+  $.mobile.changePage("listOfEditionView.html",{data:{userId:movilxUserId}, reloadPage: true});
+  //$.mobile.changePage("list-of-cards.html",{data:{userId:movilxUserId}});
+  
 }
+
+
+function changeToHomePage(){
+  console.log("Debug Params a HOME:  "+movilxUserId);
+  $.mobile.changePage("editionlist-cards.html",{data:{userId:movilxUserId}, reloadPage: true});
+ 
+}
+
+
 
 
 function checkRequirements()

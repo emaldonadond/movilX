@@ -6,6 +6,9 @@ $('#list-of-cards').bind('pageinit', function(event) {
   loadEditionViews();
 });
 
+
+
+
 /*
 * Descripcion: .
 *
@@ -20,7 +23,6 @@ function loadEditionViews(){
         console.log("En Custom JS: Debug Params En funcion loadEditionViews, user:  "+userId);
         $.post("http://nuestrodiario.com/nuestrodiario/bin/getMobilexEditionView.php?method=login&returnformat=json", {uID:movilxUserId}, function(res) {
 
-                    //navigator.notification.alert("Bolsa de Edicion cargada!", function() {});
           editions = res.items;
           console.log("debug Lo que viene de server: "+editions);
           $.each(editions, function(index, edition) {
@@ -45,6 +47,7 @@ function loadEditionViews(){
             '</li>'            
             );
           });
+
         },"json");
   }
   
