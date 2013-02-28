@@ -24,19 +24,19 @@ function loadUserProfile(){
           $.each(users, function(index, user) {
             $('#userList').append(
                       '<form id="UpdateForm">' +
-                        '<div data-role="fieldcontain" class="ui-hide-label">'+
-                            '<label for="username">Username:</label>' +
-                            '<input type="text" name="username" id="username" value="'+user.userData.account_name+'" placeholder="Username" />' +
+                        '<div data-role="fieldcontain">'+
+                            '<label for="username">Nombre Usuario:</label>' +
+                            '<input type="text" name="username" id="username" value="'+user.userData.account_name+'" placeholder="Username" readonly/>' +
                         '</div>' +
 
 
-                        '<div data-role="fieldcontain" class="ui-hide-label">' +
-                            '<label for="email">Email:</label>' +
+                        '<div data-role="fieldcontain">' +
+                            '<label for="email">E-mail:</label>' +
                             '<input type="email" name="email" id="email" value="'+user.userData.account_email+'" placeholder="Email" />' +
                         '</div>' +
 
 
-                        '<div data-role="fieldcontain" class="ui-hide-label">' +
+                        '<div data-role="fieldcontain">' +
                             '<label for="password">Password:</label>' +
                             '<input type="password" name="password" id="password" value="'+user.userData.account_password+'" placeholder="Password" />' +
                         '</div>' +
@@ -49,7 +49,8 @@ function loadUserProfile(){
 
                         '<input type="submit" value="UpdateUser" id="submitButton">' +
                      '</form>'         
-            );
+            ).trigger( "create" );
+            
           });
           
         },"json");
