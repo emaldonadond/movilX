@@ -272,7 +272,7 @@ function createPositionsHistoryList(idElement, positions)
 
 function checkPreAuth() {
     var form = $("#loginForm");
-    navigator.notification.alert("nigga check Path!", function() {});
+    
     if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
         $("#username", form).val(window.localStorage["username"]);
         $("#password", form).val(window.localStorage["password"]);

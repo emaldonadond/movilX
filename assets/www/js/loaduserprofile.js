@@ -1,5 +1,3 @@
-var serviceURL = "http://www.nuestrodiario.com/MovilX/mobileOps/layerx/";
-
 var editions;
 
 $('#userProfilePage').bind('pageinit', function(event) {
@@ -9,8 +7,33 @@ $('#userProfilePage').bind('pageinit', function(event) {
 
 /*
 * Descripcion: .
-*
+* Users Methods
 */
+
+function updateUserProfile(){
+  console.log("En funct para actualizar user");
+  var form = $("#UpdateForm");    
+  //disable the button so we can't resubmit while we wait
+  $("#submitUpdateUserProfileButton",form).attr("disabled","disabled");
+  var username = $("#username", form).val();
+  var pass = $("#password", form).val();
+  var email = $("#email", form).val();
+
+  var userid = movilxUserId;
+  //-----------
+  if(username != '') {
+        console.log("@updateUserProfile with, user:)  :"+username);
+        $.post("http://www.nuestrodiario.com/MovilX/mobileOps/userUpdate.php?method=login&returnformat=json", {userid:userid, username:username, password:pass, email:email}, function(res) {
+        navigator.notification.alert("Tus datos han sido actualizados!", function() {});
+        console.log("-- Boom! tenemos respuesta de userUpdate.php");  
+        //redirect to home
+        $.mobile.changePage("editionlist-cards.html");
+          
+        },"json");
+  }
+
+
+}
 
 function loadUserProfile(){
 
@@ -47,7 +70,7 @@ function loadUserProfile(){
                             '<input type="parent" name="parent" id="parent" value="'+user.userData.parent_id+'" placeholder="Parent" />' +
                         '</div>' +
 
-                        '<input type="submit" value="UpdateUser" id="submitButton">' +
+                        '<input type="submit" value="Actualizar" id="submitUpdateUserProfileButton" onclick="updateUserProfile();">' +
                      '</form>'         
             ).trigger( "create" );
             

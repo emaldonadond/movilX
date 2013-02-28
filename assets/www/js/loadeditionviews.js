@@ -34,7 +34,6 @@ function loadEditionViews(){
                       '<img src="http://nuestrodiario.com/nuestrodiario/pages/'+ edition.pathPage +'" />' +
                     '</div>' +
                   '</li>' +
-                  
                   '<li class="loc-credits">' +
                     '<img src="resources/images/profile-01.png"/>' +
                     '<h3>Porta tristique et in et</h3>' +
@@ -45,9 +44,9 @@ function loadEditionViews(){
                   '</li>' +
                 '</ul>' +
             '</li>'            
-            );
+            ).trigger( "create" );
           });
-          $('#editionviewlist').listview('refresh');
+          
         },"json");
   }
   
