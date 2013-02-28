@@ -16,6 +16,11 @@ function changeToHomePage(){
 }
 
 
+function changeToProfilePage(){
+  console.log("Debug Params a PROFILE:  "+movilxUserId);
+  $.mobile.changePage("userProfile.html",{data:{userId:movilxUserId}, reloadPage: true});
+ 
+}
 
 
 function checkRequirements()

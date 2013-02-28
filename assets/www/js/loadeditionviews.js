@@ -47,7 +47,7 @@ function loadEditionViews(){
             '</li>'            
             );
           });
-
+          $('#editionviewlist').listview('refresh');
         },"json");
   }
   

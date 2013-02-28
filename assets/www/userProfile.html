@@ -9,16 +9,34 @@
     
 <body>
         
-<div id="editionListPage" data-role="page" >
+<div id="userProfilePage" data-role="page" >
 
    <div data-role="header" data-position="fixed">
       <h1>Perfil de usuario</h1>
    </div>
 
    <div data-role="content">
-         <ul id="editionList" data-role="listview" data-filter="true"></ul>
+   		<div id="userList"> </div>
+        <ul id="userList00" data-role="listview" data-filter="true"></ul>
     </div>     
-    <script src="js/editionlist.js"></script>
+
+  
+
+
+    <script src="js/loaduserprofile.js"></script>
+
+        <div data-role="footer" data-position="fixed" data-id="tab1">
+
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#" data-icon="home" onclick="changeToHomePage();">Inicio</a></li>
+            <li><a href="#" data-icon="star" class="ui-btn-active ui-state-persist" onclick="changeToEditionViewPage();">Mis Ediciones</a></li>
+            <li><a href="#" data-icon="grid" onclick="changeToProfilePage();">Perfil</a></li>
+          </ul>
+      </div>
+
+
+    </div>
 </div>
 
 
@@ -32,7 +50,7 @@
 <script src="js/jquery.mobile-1.2.0.min.js"></script>  
 <script src="cordova-2.3.0.js"></script>
 
-<script src="js/editionlist.js"></script>
+<script src="js/loaduserprofile.js"></script>
 </body>
 
 </html>
