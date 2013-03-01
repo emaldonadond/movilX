@@ -31,7 +31,9 @@ function loadEditionViews(){
                 '<ul data-role="listview" data-inset="true" class="loc-card">' +
                   '<li class="loc-image">' +
                     '<div>' +
+                      '<a href="#" data-role="button" id="gotoGalleryBtnBoom" onclick="changePageWithArguments('+ "\'" + edition.fixed_dash_date + "\'" + ','+ edition.supplement_id +');">' +
                       '<img src="http://nuestrodiario.com/nuestrodiario/pages/'+ edition.pathPage +'" />' +
+                      '</a> ' + 
                     '</div>' +
                   '</li>' +
                   '<li class="loc-credits">' +
