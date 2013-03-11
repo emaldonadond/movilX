@@ -39,13 +39,12 @@ function getEditionList() {
           '</div></li>' +
 
           '<li class="loc-credits">' + 
-          '<img src="resources/images/profile-01.png"/>' +
-          '<h3>' + edition.edition_publication_date + '</h3>' +
-          '<p>by <a href="#">sandra</a>.</p>' +
+          '<h3>' + '<a href="#" data-role="button" id="gotoGalleryBtnBoom" onclick="changePageWithArguments('+ "\'" + edition.fixed_dash_date + "\'" + ','+ edition.supplement_id +');">' + edition.edition_publication_date + '</a>' + '</h3>' + 
+          '<p>Por <a href="#">Nuestro Diario.</a>.</p>' +
           '</li>' +
 
           '<li class="loc-comments">' + 
-          '<a href="#" data-role="button" id="gotoGalleryBtnBoom" onclick="changePageWithArguments('+ "\'" + edition.fixed_dash_date + "\'" + ','+ edition.supplement_id +');">ABRIR AQUI</a><p>2 comments, 4 likes</p>' +
+          '<a href="#" data-role="button" id="gotoGalleryBtnBoom" onclick="changePageWithArguments('+ "\'" + edition.fixed_dash_date + "\'" + ','+ edition.supplement_id +');">ABRIR AQUI</a><p>.</p>' +
           '</li>');
           console.log("Debug Params 00x, date:  "+edition.fixed_dash_date+", suplem: "+edition.supplement_id);
     });
